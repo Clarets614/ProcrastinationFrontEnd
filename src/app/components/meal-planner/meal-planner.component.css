@@ -1,0 +1,33 @@
+.star {
+    color: #ffb140;
+    border: none;
+    background-color: transparent;
+    margin-right: 0px;
+}
+
+.greendiv{
+    background-color: #a5c882;
+    border-radius: 10px;
+    width: 45%;
+    height: 90%;
+    min-height: 300px;
+}
+
+.bluediv{
+    background-color: #a4def9;
+    border-radius: 10px;
+    width: 45%;
+    /* min-height: 350px; */
+}
+
+.link-dark{
+    text-decoration: none;
+}
+.fixed
+{
+    position: fixed;
+   
+}
+.sticky-offset {
+    top: 70px;
+}

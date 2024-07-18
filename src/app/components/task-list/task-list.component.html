@@ -1,0 +1,56 @@
+<div class="container-md p-3">
+    <div class="text-center pt-1 pb-4">
+        <h4>Today's Date: {{ currentDateTime }} </h4>
+
+    </div>
+    <table class="table table-hover">
+        <thead>
+            <tr>
+                <th></th>
+                <th>Task</th>
+                <th>Details</th>
+                <th>Deadline</th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            @for (t of userTask; track t.taskId) {
+
+            @if(t.isComplete == true){
+            <tr>
+
+                <td> <i class="bi bi-check-square" (click)="completeTask(t)"></i></td>
+                <td>{{t.task1}}</td>
+                <td>{{ t.details }}</td>
+                <td>{{t.deadline | date:'shortDate'}}</td>
+                <td><button class="bi bi-trash3 buttoncolorblue btn" (click)="deleteTask(t.taskId)"></button> </td>
+
+            </tr>
+            }
+
+            @else{
+            <tr>
+                <td><i class="bi bi-square" (click)="completeTask(t)"></i></td>
+                <td>{{t.task1}}</td>
+                <td>{{ t.details }}</td>
+                <td>{{t.deadline | date: 'shortDate'}}</td>
+                <td><button class="bi bi-trash3 buttoncolorblue btn" (click)="deleteTask(t.taskId)"></button></td>
+            </tr>
+
+
+
+
+          
+
+            }
+            }
+        </tbody>
+
+
+
+
+    </table>
+
+
+    <app-add-task-form (Submitted)="addTask($event)"></app-add-task-form>
+</div>
